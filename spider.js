@@ -85,6 +85,12 @@
 
       // ##################  Setup Link Data  #################
 
+      // Find page title
+
+      var pageTitle = this.evaluate(function(){
+        return document.title;
+      });
+
       // Get current response status of URL
       var status = this.status().currentHTTPStatus;
 
@@ -94,7 +100,8 @@
       // Instantiate link object for log
       var link = {
         url: url,
-        status: status
+        status: status,
+        title: pageTitle
       };
 
       // Push links to dataObj
